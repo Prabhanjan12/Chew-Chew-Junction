@@ -28,9 +28,17 @@
 }
 
 .body {
+  .filter{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+
     .search {
-        padding: 10px;
-    }
+      margin-right: 10px;
+
+  }
+  }
+    
   .res-container {
     display: flex;
     flex-wrap: wrap;
@@ -50,4 +58,18 @@
         cursor: pointer;
     }
   }
+}
+
+.shimmer {
+  display: flex;
+  flex-wrap: wrap;
+  color: black;
+  
+}
+.shimmer-card {
+  width: 200px;
+  height: 400px;
+  color: black;
+  margin: 10px;
+  background-color: #f0f0f0;
 }
