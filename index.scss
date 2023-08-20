@@ -28,34 +28,60 @@
 }
 
 .body {
-  .filter{
+  .filter {
     display: flex;
     align-items: center;
     padding: 10px;
 
     .search {
       margin-right: 10px;
+    }
+  }
 
-  }
-  }
-    
   .res-container {
     display: flex;
     flex-wrap: wrap;
-    
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
     .res-cards {
       background-color: #f0f0f0;
       width: 200px;
       padding: 5px;
       margin: 5px;
+      border: 1px solid transparent;
+      transition: border-color 0.2s ease;
+
+      .heading,
+      .clamped-text {
+        // height: 50px;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Number of lines to display */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .cuisines {
+        height: 80px;
+      }
+
+      img {
+        height: 200px;
+        object-fit: cover;
+      }
       .res-logo {
         width: 100%;
       }
     }
 
     .res-cards:hover {
-        border: 1px solid black;
-        cursor: pointer;
+      border-color: black;
+      cursor: pointer;
     }
   }
 }
@@ -64,7 +90,6 @@
   display: flex;
   flex-wrap: wrap;
   color: black;
-  
 }
 .shimmer-card {
   width: 200px;
@@ -72,4 +97,9 @@
   color: black;
   margin: 10px;
   background-color: #f0f0f0;
+}
+
+.user-card {
+  padding: 10px;
+  border: 1px solid black;
 }
