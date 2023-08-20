@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { objList } from "../utils/objList";
 import RestaurantConatiner from "./RestaurantContainer";
 import ShimmmerUI from "./ShimmmerUI";
+import { Link } from "react-router-dom";
+import RestaurantConatinerClass from "./RestaurantContainerClass";
 
 const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
@@ -21,6 +23,9 @@ const Body = () => {
     console.log(
       jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
+    );
+    console.log(
+      jsonData?.data
     );
     setRestaurantList(
       jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
@@ -71,7 +76,7 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurant?.map((resList) => (
-          <RestaurantConatiner resData={resList} />
+          <Link to={"/restaurants/"+resList?.info?.id} key={resList?.info?.id}><RestaurantConatiner resData={resList} /><RestaurantConatinerClass resData={resList} /></Link>
         ))}
       </div>
     </div>

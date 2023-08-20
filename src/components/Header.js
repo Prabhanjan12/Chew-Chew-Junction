@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { IMG_HEAD } from "../utils/constants";
+import { Link } from "react-router-dom";
 
 const Header = () => {
         const [login, setLogin] = useState(false);
@@ -10,9 +11,9 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact Us</li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/contact">Contact Us</Link></li>
           <li>Cart</li>
           <button style={{cursor: "pointer", padding: "5px"}} className="login" onClick={()=> setLogin(!login)}>{login ? "Logout" : "Login"}</button>
         </ul>
